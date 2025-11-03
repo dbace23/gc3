@@ -31,8 +31,8 @@ func (o *opener) Open(ctx context.Context, dsn string) (*gorm.DB, error) {
 	if err != nil {
 		return nil, fmt.Errorf("native db: %w", err)
 	}
-	sql.SetMaxOpenConns(10)
-	sql.SetMaxIdleConns(5)
+	sql.SetMaxOpenConns(3)
+	sql.SetMaxIdleConns(2)
 	sql.SetConnMaxLifetime(30 * time.Minute)
 
 	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
@@ -43,3 +43,4 @@ func (o *opener) Open(ctx context.Context, dsn string) (*gorm.DB, error) {
 	log.Info("database connected")
 	return db, nil
 }
+
