@@ -54,11 +54,11 @@ func main() {
 	}
 
 	// auto migrate
-	if err := db.AutoMigrate(&model.User{}, &model.Workout{}, &model.Exercise{}, &model.ExerciseLog{}); err != nil {
-		logger.Error("migration failed", slog.Any("err", err))
-		os.Exit(1)
-	}
-	logger.Info("migration success")
+	//if err := db.AutoMigrate(&model.User{}, &model.Workout{}, &model.Exercise{}, &model.ExerciseLog{}); err != nil {
+		//logger.Error("migration failed", slog.Any("err", err))
+		//os.Exit(1)
+	//}
+	//logger.Info("migration success")
 
 	//dependency inject
 	userRepo := userrepo.New(db)
@@ -79,3 +79,4 @@ func main() {
 		logger.Error("server stopped", slog.Any("err", err))
 	}
 }
+
