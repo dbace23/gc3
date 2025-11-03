@@ -1,0 +1,22 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    email: halim@example.com
+    name: Halim Iskandar
+  description: RESTful API for Gym App (Hacktiv8 Graded Challenge 3)
+  license:
+    name: MIT
+  termsOfService: http://swagger.io/terms/
+  title: Gym REST API
+  version: "1.0"
+paths: {}
+schemes:
+- http
+- https
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
