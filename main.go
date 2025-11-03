@@ -22,7 +22,7 @@ import (
 
 	echoServer "gym/app/echoServer"
 	"gym/config"
-	"gym/model"
+	//"gym/model"
 	userrepo "gym/repository/user"
 	authsvc "gym/service/auth"
 	usersvc "gym/service/user"
@@ -79,4 +79,5 @@ func main() {
 		logger.Error("server stopped", slog.Any("err", err))
 	}
 }
+
 
